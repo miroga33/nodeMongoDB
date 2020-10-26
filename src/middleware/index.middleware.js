@@ -1,5 +1,7 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 
-console.log("hola");
+router.use(require("./token.middleware"));
+router.use(require("./admin.middleware"));
 
+module.exports = router;
